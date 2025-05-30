@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunny Education (Thầy Hưng chuyên toán)</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Optional: Add a favicon -->
+  <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <!-- Khối thương hiệu Sunny Education -->
+      <div class="header-brand">
+        <img src="./sunny.png" alt="Logo Sunny Education" class="logo">
+        <div class="brand-text-group">
+          <span class="brand-name">Sunny Education</span>
+          <span class="brand-tagline">(Thầy Hưng chuyên toán)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <section class="lookup-card">
+        <h2>Tra cứu học sinh</h2>
+        <form id="search-form">
+          <div class="form-group">
+            <label for="input-name">Họ và tên học sinh:</label>
+            <input type="text" id="input-name" name="studentName" placeholder="Nhập đầy đủ họ và tên" required>
+          </div>
+
+          <div class="form-group">
+            <label for="input-dob">Ngày sinh:</label>
+            <input type="date" id="input-dob" name="studentDOB" required>
+          </div>
+
+          <button type="button" id="btn-search" class="btn btn-primary">Tìm kiếm</button>
+        </form>
+      </section>
+
+      <section id="output" class="output-card" aria-live="polite">
+        <!-- Results will be displayed here by main.js -->
+        <p class="placeholder-text">Vui lòng nhập thông tin và nhấn "Tìm kiếm" để xem kết quả.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Sunny Education (Thầy Hưng chuyên toán). Bảo lưu mọi quyền.</p>
+      <!-- <p>Liên hệ: example@email.com | Điện thoại: 0123 456 789</p> -->
+    </div>
+  </footer>
+
+  <!-- Adding the XLSX library to parse Excel files -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

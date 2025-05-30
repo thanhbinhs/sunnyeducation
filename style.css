@@ -1,0 +1,307 @@
+/* Basic Reset & Global Styles */
+:root {
+  --primary-color: #007bff; /* Blue */
+  --secondary-color: #6c757d; /* Gray */
+  --light-gray: #f8f9fa;
+  --medium-gray: #e9ecef; /* Added for subtle background */
+  --dark-gray: #343a40;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --border-radius: 0.3rem;
+  --box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --header-height: 80px; /* Approximate height for calculations if needed */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-gray);
+  background-color: var(--medium-gray); /* Light background for the whole page */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.site-header {
+  background-color: white; /* White background for header */
+  padding: 10px 0;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: var(--box-shadow);
+  /* position: sticky;
+  top: 0;
+  z-index: 1000; */ /* Optional: sticky header */
+}
+
+.header-content {
+  display: flex;
+  justify-content: center; /* Center the single brand block */
+  align-items: center;
+  min-height: calc(var(--header-height) - 20px); /* Adjust based on padding */
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 60px; /* Adjusted logo size */
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.5em; /* Main brand name */
+  font-weight: 600;
+  color: var(--primary-color);
+  line-height: 1.2;
+}
+
+.brand-tagline {
+  font-size: 0.9em; /* Tagline */
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1; /* Allows main content to take up available space */
+  padding: 2rem 0;
+}
+
+/* Cards */
+.lookup-card, .results-card {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+}
+
+.lookup-card h2, .results-card h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Form Elements */
+#search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Increased space between form groups */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Button */
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue */
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Output / Results Card */
+.results-card .placeholder-text {
+  color: var(--secondary-color);
+  text-align: center;
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+.error-message {
+  color: var(--danger-color);
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: var(--border-radius);
+}
+
+.success-message {
+  color: var(--success-color);
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: var(--border-radius);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--dark-gray);
+  color: var(--light-gray);
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: auto; /* Pushes footer to bottom if content is short */
+}
+
+.site-footer p {
+  margin: 0.3rem 0;
+}
+
+.output-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-height: 450px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+th, td {
+  padding: 12px 8px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  word-wrap: break-word;
+}
+
+th {
+  background: #5563DE;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+tbody tr:hover {
+  background: rgba(85, 99, 222, 0.12);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header-content {
+      padding: 10px 0;
+  }
+  .header-brand {
+      flex-direction: column;
+      text-align: center;
+      gap: 5px;
+  }
+  .logo {
+      height: 50px;
+  }
+  .brand-name {
+      font-size: 1.3em;
+  }
+  .brand-tagline {
+      font-size: 0.8em;
+  }
+
+  .lookup-card h2, .results-card h2 {
+      font-size: 1.3rem;
+  }
+  .lookup-card, .results-card {
+      padding: 1rem 1.5rem;
+  }
+  table {
+    font-size: 0.8rem;
+  }
+
+  th, td { /* Áp dụng chung cho cả th, td ở desktop/tablet */
+    padding: 8px 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+      height: 45px;
+  }
+  .brand-name {
+      font-size: 1.1em;
+  }
+  .brand-tagline {
+      font-size: 0.75em;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="date"],
+  .btn {
+      font-size: 0.9rem;
+  }
+  .btn {
+      padding: 0.6rem 1.2rem;
+  }
+
+  /* --- Responsive Table: Mobile device display --- */
+  /* This CSS relies on main.js adding data-label attributes to <td> elements */
+
+  /* Cho phép thead hiển thị và style nó như một block */
+  
+
+
+}
